@@ -13,7 +13,7 @@ class storm(
   $user                                        = 'root',
   $group                                       = 'root',
   $home                                        = '/usr/lib/storm',
-  $version                                     = '1.0.0',
+  $version                                     = '1.0.2',
   $lib                                         = '/usr/lib/storm/lib',
 
   # Install from apache repositories
@@ -39,7 +39,7 @@ class storm(
   $config_file                                 = '/etc/storm/storm.yaml',
   $dev_zookeeper_path                          = '/tmp/dev-storm-zookeeper',
     #_ WORKERS _#
-  $worker_heap_memory_mb                       = 768,
+  $worker_heap_memory_mb                       = 1024,
   $worker_childopts                            = '-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump',
   $worker_heartbeat_frequency_secs             = 1,
   $task_heartbeat_frequency_secs               = 3,
